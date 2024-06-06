@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm mocha"
+    "test": "next mocha"
   },
   "dependencies": {
     "react": "^18",
