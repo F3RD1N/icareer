@@ -1,8 +1,10 @@
-FROM node:20
+FROM node:20-alpine3.18 AS builder
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN  npm install --production
 COPY . .
+RUN npm run build
+
 EXPOSE 3000
-CMD npm run dev
+CMD ["npm","run", "start"]  # Start the Next.js server in production mode
